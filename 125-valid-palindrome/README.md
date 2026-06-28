@@ -6,3 +6,6 @@ Used isalnum() to check if a character is alphabet,digit and not any symbol
 If symbol or space then go to next character
 If characters converted in lowercase not equal, return false
 Else to next character, check, after left pointer becomes equal or greater than right, end loop return true or false.
+
+Time complexity: O(n)
+Space complexity: O(n)
