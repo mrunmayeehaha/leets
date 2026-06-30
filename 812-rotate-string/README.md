@@ -1,23 +1,12 @@
-<h2><a href="https://leetcode.com/problems/rotate-string">Rotate String</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given two strings <code>s</code> and <code>goal</code>, return <code>true</code> <em>if and only if</em> <code>s</code> <em>can become</em> <code>goal</code> <em>after some number of <strong>shifts</strong> on</em> <code>s</code>.</p>
+<h2><a href="https://leetcode.com/problems/rotate-string">Rotate String</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' />
 
-<p>A <strong>shift</strong> on <code>s</code> consists of moving the leftmost character of <code>s</code> to the rightmost position.</p>
+## approach:
 
-<ul>
-	<li>For example, if <code>s = &quot;abcde&quot;</code>, then it will be <code>&quot;bcdea&quot;</code> after one shift.</li>
-</ul>
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> s = "abcde", goal = "cdeab"
-<strong>Output:</strong> true
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> s = "abcde", goal = "abced"
-<strong>Output:</strong> false
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- If length of both string not equal, return False
+- Concatenated string s with itself
+- Checkif goal is the substring of the concatenated string
+- If yes, return True else, False
 
-<ul>
-	<li><code>1 &lt;= s.length, goal.length &lt;= 100</code></li>
-	<li><code>s</code> and <code>goal</code> consist of lowercase English letters.</li>
-</ul>
+- Time complexity: O(n)
+- Space complexity: O(n)
