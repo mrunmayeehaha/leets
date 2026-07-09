@@ -1,34 +1,18 @@
-<h2><a href="https://leetcode.com/problems/longest-consecutive-sequence">Longest Consecutive Sequence</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest consecutive elements sequence.</em></p>
+<h2><a href="https://leetcode.com/problems/longest-consecutive-sequence">Longest Consecutive Sequence</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' />
 
-<p>You must write an algorithm that runs in&nbsp;<code>O(n)</code>&nbsp;time.</p>
+## approach:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
 
-<pre>
-<strong>Input:</strong> nums = [100,4,200,1,3,2]
-<strong>Output:</strong> 4
-<strong>Explanation:</strong> The longest consecutive elements sequence is <code>[1, 2, 3, 4]</code>. Therefore its length is 4.
-</pre>
+- initialized i, current, longest to 0
+- if array is empty, return 0
+- sort the given array
+- traversed through the array using for loop,
+     - if the difference of current number and the next number is equal to 1, then increment current
+     - if current number and next number are same,skip the number
+     - else, assign highest number amongst longest and current to current, initialize current to 1(this is when sequence 
+       breaks)
+- assign greater count to longest
+- return longest
 
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [0,3,7,2,5,8,4,6,0,1]
-<strong>Output:</strong> 9
-</pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [1,0,1,2]
-<strong>Output:</strong> 3
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>0 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-</ul>
+- Time complexity: O(n)
+- Space complexity: O(1)
