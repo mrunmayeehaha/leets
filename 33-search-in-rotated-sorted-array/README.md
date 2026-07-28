@@ -1,29 +1,18 @@
-<h2><a href="https://leetcode.com/problems/search-in-rotated-sorted-array">Search in Rotated Sorted Array</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).</p>
+<h2><a href="https://leetcode.com/problems/search-in-rotated-sorted-array">Search in Rotated Sorted Array</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' />
 
-<p>Prior to being passed to your function, <code>nums</code> is <strong>possibly left rotated</strong> at an unknown index <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,5,6,7]</code> might be left rotated by&nbsp;<code>3</code>&nbsp;indices and become <code>[4,5,6,7,0,1,2]</code>.</p>
+## approach:
 
-<p>Given the array <code>nums</code> <strong>after</strong> the possible rotation and an integer <code>target</code>, return <em>the index of </em><code>target</code><em> if it is in </em><code>nums</code><em>, or </em><code>-1</code><em> if it is not in </em><code>nums</code>.</p>
+- initialize left to 0 and right to last element
+- while left less than or equal to right
+     - check if element at mid is equal to target, if yes return the position of mid
+     - if number at left's position is less than or equal to mid (means left side sorted)
+          - check for target between left and mid, right equal mid - 1
+          - else, left equal mid + 1
+     - else, (if right side sorted)
+         - check for target between mid and last element, if present then left equal mid + 1
+         - else, right equal mid - 1
+- if target not present, return -1
 
-<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+- Time complexity: O(log n)
+- Space complexity: O(1)
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> nums = [4,5,6,7,0,1,2], target = 0
-<strong>Output:</strong> 4
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> nums = [4,5,6,7,0,1,2], target = 3
-<strong>Output:</strong> -1
-</pre><p><strong class="example">Example 3:</strong></p>
-<pre><strong>Input:</strong> nums = [1], target = 0
-<strong>Output:</strong> -1
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 5000</code></li>
-	<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
-	<li>All values of <code>nums</code> are <strong>unique</strong>.</li>
-	<li><code>nums</code> is an ascending array that is possibly rotated.</li>
-	<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
-</ul>
