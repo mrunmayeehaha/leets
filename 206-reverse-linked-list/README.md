@@ -1,34 +1,31 @@
-<h2><a href="https://leetcode.com/problems/reverse-linked-list">Reverse Linked List</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given the <code>head</code> of a singly linked list, reverse the list, and return <em>the reversed list</em>.</p>
+<h2><a href="https://leetcode.com/problems/reverse-linked-list">Reverse Linked List</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' />
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" style="width: 542px; height: 222px;" />
-<pre>
-<strong>Input:</strong> head = [1,2,3,4,5]
-<strong>Output:</strong> [5,4,3,2,1]
-</pre>
+## approach:
 
-<p><strong class="example">Example 2:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg" style="width: 182px; height: 222px;" />
-<pre>
-<strong>Input:</strong> head = [1,2]
-<strong>Output:</strong> [2,1]
-</pre>
+-initialize prev = None and curr = head
+-save curr.next in nextNode
+- point curr.next to prev
+- move prev to curr
+- move curr to nextNode
+- repeat until curr becomes None
+- return prev
 
-<p><strong class="example">Example 3:</strong></p>
+## Complexity:
+time: O(n)
+space: O(1)
 
-<pre>
-<strong>Input:</strong> head = []
-<strong>Output:</strong> []
-</pre>
+## pointer diagram:
+prev    curr
+ ↓       ↓
+None    1 → 2 → 3
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+nextNode
+   ↓
+2 → 3
 
-<ul>
-	<li>The number of nodes in the list is the range <code>[0, 5000]</code>.</li>
-	<li><code>-5000 &lt;= Node.val &lt;= 5000</code></li>
-</ul>
+curr.next = prev
+1 → None
 
-<p>&nbsp;</p>
-<p><strong>Follow up:</strong> A linked list can be reversed either iteratively or recursively. Could you implement both?</p>
+prev      curr
+ ↓         ↓
+1 → None   2 → 3
