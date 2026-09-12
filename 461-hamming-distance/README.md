@@ -1,33 +1,13 @@
-<h2><a href="https://leetcode.com/problems/hamming-distance">Hamming Distance</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>
+<h2><a href="https://leetcode.com/problems/hamming-distance">Hamming Distance</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' />
 
-<p>Given two integers <code>x</code> and <code>y</code>, return <em>the <strong>Hamming distance</strong> between them</em>.</p>
+## approach:
+- XOR (^):
+- gives 1 when bits are different
+- gives 0 when bits are same
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Hamming distance:
+- XOR the two numbers
+- count the 1s in the XOR result
 
-<pre>
-<strong>Input:</strong> x = 1, y = 4
-<strong>Output:</strong> 2
-<strong>Explanation:</strong>
-1   (0 0 0 1)
-4   (0 1 0 0)
-       &uarr;   &uarr;
-The above arrows point to positions where the corresponding bits are different.
-</pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> x = 3, y = 1
-<strong>Output:</strong> 1
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>0 &lt;=&nbsp;x, y &lt;= 2<sup>31</sup> - 1</code></li>
-</ul>
-
-<p>&nbsp;</p>
-<p><strong>Note:</strong> This question is the same as <a href="https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/" target="_blank"> 2220: Minimum Bit Flips to Convert Number.</a></p>
+- Time complexity: O(1)
+- Space complexity: O(1)
