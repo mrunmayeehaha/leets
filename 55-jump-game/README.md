@@ -1,28 +1,15 @@
-<h2><a href="https://leetcode.com/problems/jump-game">Jump Game</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>nums</code>. You are initially positioned at the array&#39;s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
+<h2><a href="https://leetcode.com/problems/jump-game">Jump Game</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' />
 
-<p>Return <code>true</code><em> if you can reach the last index, or </em><code>false</code><em> otherwise</em>.</p>
+## Approach:
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+- keep track of the farthest index we can reach
+- start with farthest = 0
+- for every reachable index, calculate i + nums[i]
+- update farthest with the maximum value
+- if an index is greater than farthest, we cannot reach it, so return False
+- if farthest reaches the last index, return True
+- Greedy Invariant: farthest always stores the farthest index that can be reached from the positions processed so far
+- Greedy Justification: reaching farther is always at least as good as reaching a smaller index, so we only need to keep the maximum reachable position
+- Time Complexity: O(n)
+- Space Complexity: O(1)
 
-<pre>
-<strong>Input:</strong> nums = [2,3,1,1,4]
-<strong>Output:</strong> true
-<strong>Explanation:</strong> Jump 1 step from index 0 to 1, then 3 steps to the last index.
-</pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> nums = [3,2,1,0,4]
-<strong>Output:</strong> false
-<strong>Explanation:</strong> You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
-</ul>
