@@ -1,38 +1,13 @@
-<h2><a href="https://leetcode.com/problems/candy">Candy</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>There are <code>n</code> children standing in a line.</p>
+<h2><a href="https://leetcode.com/problems/candy">Candy</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' />
 
-<p>Each child is assigned a rating value given in the integer array <code>ratings</code>.</p>
-
-<p>You are giving candies to these children subjected to the following requirements:</p>
-
-<ul>
-	<li>Each child must have <strong>at least</strong> one candy.</li>
-	<li>Children with a <strong>higher</strong> rating get more candies than their neighbors.</li>
-</ul>
-
-<p>Return the <strong>minimum</strong> number of candies you need to have to distribute the candies to the children.</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
-<pre>
-<strong>Input:</strong> ratings = [1,0,2]
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
-</pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> ratings = [1,2,2]
-<strong>Output:</strong> 4
-<strong>Explanation:</strong> You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
-The third child gets 1 candy because it satisfies the above two conditions.
-</pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= n == ratings.length &lt;= 5 * 10<sup>4</sup></code></li>
-	<li><code>0 &lt;= ratings[i] &lt;= 5 * 10<sup>4</sup></code></li>
-</ul>
+## approach:
+- give every child 1 candy initially
+- traverse from left to right
+- if the current rating is greater than the left rating, give one more candy than the left child
+- traverse from right to left
+- if the current rating is greater than the right rating, give one more candy than the right child
+- use max() so we don't decrease candies already given in the first pass
+- add all the candies and return the total
+- Greedy Invariant: after both passes, every child has enough candies to satisfy both neighbouring rating conditions
+- Time complexity: O(n)
+- Space complexity: O(n)
