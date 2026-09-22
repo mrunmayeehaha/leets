@@ -1,29 +1,14 @@
-<h2><a href="https://leetcode.com/problems/basic-calculator-ii">Basic Calculator II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given a string <code>s</code> which represents an expression, <em>evaluate this expression and return its value</em>.&nbsp;</p>
+<h2><a href="https://leetcode.com/problems/basic-calculator-ii">Basic Calculator II</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' />
 
-<p>The integer division should truncate toward zero.</p>
+## approach:
 
-<p>You may assume that the given expression is always valid. All intermediate results will be in the range of <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>.</p>
-
-<p><strong>Note:</strong> You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as <code>eval()</code>.</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> s = "3+2*2"
-<strong>Output:</strong> 7
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> s = " 3/2 "
-<strong>Output:</strong> 1
-</pre><p><strong class="example">Example 3:</strong></p>
-<pre><strong>Input:</strong> s = " 3+5 / 2 "
-<strong>Output:</strong> 5
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= s.length &lt;= 3 * 10<sup>5</sup></code></li>
-	<li><code>s</code> consists of integers and operators <code>(&#39;+&#39;, &#39;-&#39;, &#39;*&#39;, &#39;/&#39;)</code> separated by some number of spaces.</li>
-	<li><code>s</code> represents a valid expression.</li>
-	<li>All the integers in the expression are non-negative integers in the range <code>[0, 2<sup>31</sup> - 1]</code>.</li>
-	<li>The answer is <strong>guaranteed</strong> to fit in a <strong>32-bit integer</strong>.</li>
-</ul>
+- scan the string from left to right and build the complete number including multi-digit numbers
+- keep a sign variable to remember the operator before the current number
+- for +, add the number to the stack
+- for -, add the negative of the number to the stack
+- for *, multiply the last stack element with the current number
+- for /, divide the last stack element by the current number and truncate toward zero
+- add a dummy + at the end so the last number also gets processed
+- finally, return sum(stack) because subtraction is already stored as negative values
+- Time complexity: O(n)
+- Space complexity: O(n)
