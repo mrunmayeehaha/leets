@@ -1,0 +1,15 @@
+## Approach:
+- use two pointers left  and right starting from both ends
+- keep leftMax and rightMax to store the maximum height from each side
+- if height[left] <= height[right], process the left side because left side is the limiting side
+- if the current left height is greater than or equal to leftMax, update leftMax
+- otherwise, water can be trapped, so add leftMax - height[left]
+- move left forward
+- otherwise, process the right side in the same way using rightMax
+- if the current right height is greater than or equal to rightMax, update rightMax
+- otherwise, add rightMax - height[right] to the answer
+- move right backward
+- continue until left and right meet
+- return the total trapped water
+- Time Complexity: O(n)
+- Space Complexity: O(1)
