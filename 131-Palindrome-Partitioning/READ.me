@@ -1,0 +1,21 @@
+
+
+## Approach:
+
+* use backtracking to try all possible ways to partition the string
+
+* use palindrome checking to only choose substrings that are palindromes
+
+* start from an index and try different ending positions for the current substring
+
+* if the substring is a palindrome, add it to the current path
+
+* recursively continue from `end + 1`
+
+* when we reach the end of the string, add the current path to the result
+
+* use `pop()` to remove the last chosen substring and try another choice
+
+* **Time Complexity:** O(n × 2ⁿ)
+
+* **Space Complexity:** O(n)
