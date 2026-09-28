@@ -1,0 +1,13 @@
+## Approach:
+- use BFS to find the shortest path level by level
+- store row, column, remaining obstacle eliminations, and steps in the queue
+- try all 4 directions from the current cell
+- calculate the new row and column
+- if the new cell is an obstacle, use one elimination
+- skip the cell if remaining eliminations become negative
+- store (row, column, remaining eliminations) in visited
+- treat the same cell with different remaining eliminations as different states
+- when we reach the destination, return the number of steps
+- if the queue becomes empty, return -1
+- Time complexity: O(m × n × k)
+- Space complexity: O(m × n × k)
